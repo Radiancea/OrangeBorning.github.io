@@ -21,9 +21,9 @@ define([], function () {
       var html, li = "";
       for (var i = begin; i < end && i < data.length; i++) {
         li += '<li><div class="img-box">' +
-          '<a class="img-bg" rel="example_group" href="https://oqir7yp8o.bkt.clouddn.com/' + data[i] + '?raw=true"></a>' +
+          '<a class="img-bg" rel="external" href="https://oqir7yp8o.bkt.clouddn.com/' + data[i] + '?raw=true" target="_blank"></a>' +
           '![](https://oqir7yp8o.bkt.clouddn.com/' + data[i] + '?raw=true)' +
-          '</li>';
+          '</div></li>';
       }
 
 
