@@ -1,6 +1,3 @@
-/**
- * Created by water on 2017/1/19.
- */
 define([], function () {
   return {
     page: 1,
