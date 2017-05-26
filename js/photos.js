@@ -21,8 +21,8 @@ define([], function () {
       var html, li = "";
       for (var i = begin; i < end && i < data.length; i++) {
         li += '<li><div class="img-box">' +
-          '<a class="img-bg" rel="external" href="https://oqir7yp8o.bkt.clouddn.com/' + data[i] + '?raw=true" target="_blank"></a>' +
-          '![](https://oqir7yp8o.bkt.clouddn.com/' + data[i] + '?raw=true)' +
+          '<a class="img-bg" rel="external" href="http://oqir7yp8o.bkt.clouddn.com/' + data[i] + '?raw=true" target="_blank"></a>' +
+          '![](http://oqir7yp8o.bkt.clouddn.com/' + data[i] + '?raw=true)' +
           '</div></li>';
       }
 
