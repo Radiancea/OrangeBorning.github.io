@@ -22,7 +22,7 @@ define([], function () {
             for (var i = begin; i < end && i < data.length; i++) {
                 li += '<li><div class="img-box">' +
           '<a class="img-bg" rel="example_group" href="http://oqir7yp8o.bkt.clouddn.com/' + data[i] + '?raw=true"></a>' +
-          '![](http://oqir7yp8o.bkt.clouddn.com/' + data[i] + '?imageView2/1/w/300/h/300/q/100&raw=true)' +
+          '![](http://oqir7yp8o.bkt.clouddn.com/' + data[i] + '?raw=true)' +
           '</li>';
             }
 
