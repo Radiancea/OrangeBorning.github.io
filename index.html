@@ -206,31 +206,36 @@
 <li>变量声明未赋值</li>
 <li>函数没有返回值</li>
 <li>对象没有赋值的属性</li>
-<li>调用函数时不提供应有的参数<br>Float：浮点数存在不精确问题。<br>NaN: 不等于任何数包括自己。<br>isNaN(): 只对数值有效，传入其他值会先被转成数值。<br>parseInt(): 字符串转整数，可以传入第二个参数用来做进制转换<br>parseFloat(): 字符串转浮点数。<br>object：对象，万恶的核心，无序数据集合，键值对的形式。<br>键值对：键名–&gt;property（属性），键值为函数时，代表方法。<br>点运算符与方括号运算符都可以用来读取属性，但是数组中不用点运算符。<br>全局变量都是window的属性。<br>Object.keys(obj)：查看对象的所有属性。<br>delete：删除对象本身的属性，无法删除window属性，也无法删除继承的属性。<br>in运算符：检查某个属性是否在对象内，不能识别继承的属性。<br>for…in: 用来遍历一个对象的全部属性，只遍历(enumerable)可以遍历到的属性，跳过不开遍历的。包括自身属性及所有继承的属性。<br>Array：多维数组含义，数组可以看成一个键名为数值键且从’0’开始特殊对象。<br>arr.length=0: 数组清空。<br>array-like object： 类似数组对象，只要有length属性就是类似数组的对象，arguments，DOM元素集，字符串。<br>var arr=Array.prototype.slice.call(array-like): 类数组对象转数组<br>空位元素<br>Function Declaration:函数声明<br>Function Expression：函数表达式<br>构造函数：只有最后一个函数会被当做函数体<br>函数重复声明覆盖<br>函数声明提升<br>函数的属性：</li>
-<li>name：function之后的函数名</li>
-<li>length：定义函数时的形式参数个数，调用时不改变</li>
-<li>toString(): 返回函数源码包括内部注释<br>函数级作用域：function内局部变量；只作用在自身内对内部函数不起作用；函数执行时所在的作用域是定义时的作用域。<br>pass by value：对于原始数据类型使用传值传递，函数内部修改不影响原始值<br>pass by reference：对于复合数据类型使用传址传递，函数内部修改属性值会修改原始属性。<br>chain scope：链式作用域<br>closure：闭包</li>
-<li>实现在函数外部读取函数内部声明的变量</li>
-<li>chain scope 子对象会向上逐级寻找父对象的变量<br>运用chain scope，把子对象作为父对象返回值实现外部读取内部变量。</li>
-<li>定义在一个函数内部的函数</li>
-<li>特点：记住诞生环境，得到诞生环境内部变量</li>
-<li>作用：读取函数内部变量；让这些变量始终保持在内存中；函数内部作用域接口；封装对象的私有属性和私有方法。</li>
-<li>正因为闭包会保存在内存中，所以不能滥用。多了会影响网页性能。<br>IIFE：理解调用的函数表达式（匿名函数使用）</li>
-<li>圆括号方法</li>
-<li>运算符方法</li>
-<li>new方法</li>
-<li>true&amp;&amp;方法</li>
-<li>0;方法</li>
-<li>目的：不必为函数命名，避免污染全局变量；内部形成单独作用域，可封装一些无法读取的私有变量<br>Error：JS原生错误类型</li>
-<li>SyntaxError：语法错误</li>
-<li>ReferenceError：引用一个不存在的变量</li>
-<li>RangeError：超出有效值范围</li>
-<li>TypeError：变量或参数不是预期类型</li>
-<li>URIError：URI相关函数参数不正确</li>
+<li>调用函数时不提供应有的参数</li>
 </ul>
 </li>
 </ul>
-
+<p>Float：浮点数存在不精确问题。<br>NaN: 不等于任何数包括自己。<br>isNaN(): 只对数值有效，传入其他值会先被转成数值。<br>parseInt(): 字符串转整数，可以传入第二个参数用来做进制转换<br>parseFloat(): 字符串转浮点数。<br>object：对象，万恶的核心，无序数据集合，键值对的形式。<br>键值对：键名–&gt;property（属性），键值为函数时，代表方法。<br>点运算符与方括号运算符都可以用来读取属性，但是数组中不用点运算符。<br>全局变量都是window的属性。<br>Object.keys(obj)：查看对象的所有属性。<br>delete：删除对象本身的属性，无法删除window属性，也无法删除继承的属性。<br>in运算符：检查某个属性是否在对象内，不能识别继承的属性。<br>for…in: 用来遍历一个对象的全部属性，只遍历(enumerable)可以遍历到的属性，跳过不开遍历的。包括自身属性及所有继承的属性。<br>Array：多维数组含义，数组可以看成一个键名为数值键且从’0’开始特殊对象。<br>arr.length=0: 数组清空。<br>array-like object： 类似数组对象，只要有length属性就是类似数组的对象，arguments，DOM元素集，字符串。<br>var arr=Array.prototype.slice.call(array-like): 类数组对象转数组<br>空位元素<br>Function Declaration:函数声明<br>Function Expression：函数表达式<br>构造函数：只有最后一个函数会被当做函数体<br>函数重复声明覆盖<br>函数声明提升<br>函数的属性：</p>
+<pre><code>- name：function之后的函数名
+- length：定义函数时的形式参数个数，调用时不改变
+- toString(): 返回函数源码包括内部注释
+</code></pre><p>函数级作用域：function内局部变量；只作用在自身内对内部函数不起作用；函数执行时所在的作用域是定义时的作用域。<br>pass by value：对于原始数据类型使用传值传递，函数内部修改不影响原始值<br>pass by reference：对于复合数据类型使用传址传递，函数内部修改属性值会修改原始属性。<br>chain scope：链式作用域<br>closure：闭包</p>
+<pre><code>- 实现在函数外部读取函数内部声明的变量
+- chain scope 子对象会向上逐级寻找父对象的变量
+</code></pre><p>运用chain scope，把子对象作为父对象返回值实现外部读取内部变量。</p>
+<pre><code>- 定义在一个函数内部的函数
+- 特点：记住诞生环境，得到诞生环境内部变量
+- 作用：读取函数内部变量；让这些变量始终保持在内存中；函数内部作用域接口；封装对象的私有属性和私有方法。
+- 正因为闭包会保存在内存中，所以不能滥用。多了会影响网页性能。
+</code></pre><p>IIFE：理解调用的函数表达式（匿名函数使用）</p>
+<pre><code>- 圆括号方法
+- 运算符方法
+- new方法
+- true&amp;&amp;方法
+- 0;方法
+- 目的：不必为函数命名，避免污染全局变量；内部形成单独作用域，可封装一些无法读取的私有变量
+</code></pre><p>Error：JS原生错误类型</p>
+<pre><code>- SyntaxError：语法错误
+- ReferenceError：引用一个不存在的变量
+- RangeError：超出有效值范围
+- TypeError：变量或参数不是预期类型
+- URIError：URI相关函数参数不正确
+</code></pre>
       
 
       
