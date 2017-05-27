@@ -154,6 +154,117 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript标准参考教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/27/JavaScript标准参考教程/">JavaScript标准参考教程</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/27/JavaScript标准参考教程/" class="archive-article-date">
+  	<time datetime="2017-05-27T09:12:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>无意中在阮一峰老师的GitHub中看见了这本书，刚好也想回顾一下自己的原生JS知识，所以点了进去，不出意外的发现了这本好书，于是再一次进入了刷书模式。</p>
+<p>下面是链接：<br>-<a href="http://javascript.ruanyifeng.com/&quot;JavaScript Standards Reference Guide&quot;" target="_blank" rel="external">JavaScript Standards Reference Guide</a></p>
+<h2 id="导论部分："><a href="#导论部分：" class="headerlink" title="导论部分："></a>导论部分：</h2><p>导论部分介绍了JS的发展历史，以及目前的发展近况，算是长姿势部分，读起来也是蛮有意思的，也有阮老师一些让人耳目一新的个人见解，推荐阅读，可以让你慢慢进入这本书。</p>
+<h3 id="知识点记录："><a href="#知识点记录：" class="headerlink" title="知识点记录："></a>知识点记录：</h3><p>Java Script和Java没有直接关系，它是一种嵌入式语言（embedded），其本身不提供任何与<em>I/O</em>（输入/输出）相关的API，都要依靠宿主环境（host）提供，只适合嵌入大型应用程序环境，调用宿主环境提供的底层API。<br>宿主环境：浏览器，服务器（Node项目）。<br>JS：对象模型语言，宿主环境通过这个模型，描述自己的功能和操作接口，通过JS控制这些功能。<br>浏览器API:</p>
+<pre><code>- 浏览器控制类：操作浏览器
+- DOM：Document Object Model
+- BOM: borwser Object Model
+</code></pre><p>服务器API(Node)：</p>
+<pre><code>- 操作系统API
+- 文件操作API
+- 网络通信API
+</code></pre><p>JS: 支持面向对象、面向过程、函数式编程，很灵活，各种写法。<br>1990年  万维网–&gt;命令行操作，字符窗口<br>1992年  NCSA–&gt;Mosaic,图形界面窗口<br>1994年  Netscape–&gt;Netscape Navigator<br>Netscape（网景公司）因最初的互联网条件及浏览器环境，迫切需要一种嵌入式脚本语言，控制浏览器，来实现简单的表单验证。<br>JS的基本语法有C和Java的影子，数据结构中原始值、对象等借鉴自Java，函数是与其他数据类型可以平起平坐的，所以可以使用函数式编程，在这里也引入了一个<em>闭包</em>的概念。在面向对象的的编程中使用了原型继承模型。</p>
+<p>Mocha–&gt;LiveScript–&gt;JavaScript–&gt;ECMAScript<br>-这里并不是表示JS变成了ES，而是说JS<em>促成了</em>ES，在<em>《JS高级程序设计》</em>中有专门一节介绍了JS的实现，ES是作为其核心内容和基础。<br>ES只是JS语言基本语法结构的标准化。<br>目前ES已结更新到ES7，按照以后一年一个版本的说法，只能说一句：路漫漫其修远兮，吾将上下而求索。</p>
+<ul>
+<li>以前一直以为第一个浏览器是Netscape，原来还有NCSA这会事。突然就联想到美国控制着全球网络这个事了。</li>
+</ul>
+<h3 id="语法部分："><a href="#语法部分：" class="headerlink" title="语法部分："></a>语法部分：</h3><p>这部分可以回顾下JS的基本语法、数据类型、对象、函数等基础知识。此外书中还特别介绍了原生JS错误处理机制，以及编程风格。虽然只有短短两节，但是也可以在脑子中留下印象。虽然这两部分其实早已融入平时编码中。还是推荐再看一下，特别是回顾下自己的代码风格。把编码当做自己的作品，用心去对待。</p>
+<h3 id="知识点记录：-1"><a href="#知识点记录：-1" class="headerlink" title="知识点记录："></a>知识点记录：</h3><p>line：JS逐行执行，执行单位为行（line）。<br>statement：执行语句。<br>expression：表达式，一定是要返回一个值。<br>空语句：; 可以作为JS安全语句。<br>Variable: 变量，使用变量等同于引用值。JS的声明和赋值在编码时可以写在同一行，但在JS引擎解析下，还是会先声明变量，这也是之后变量提升的由来，建议书写中声明部分之前提前。JS中的变量可以只声明不赋值，这个变量将会引用一个undefined的数据类型，作为自己的值保存起来。</p>
+<pre><code>- 变量会根据所赋值改变数据类型。
+- 已经声明的变量在同一作用域（scope）下再次声明是无效的。
+- 已经声明的变量在同一作用域（scope）下再次声明且赋值，其实执行的就是变量赋值。
+</code></pre><p>delete: 无法删除顶级的window属性，<em>无法删除声明了的变量</em>。<br>Variable Hoisting：变量提升，在JS引擎解析下，所有被声明的变量都很先提升到当前作用域顶部。赋值部分位置不变。<br>Identifier：标识符–&gt;用来识别对象的名称，变量名，函数名都是常见的标识符。JS中的标识符有命名规则，这里就不再赘述。<br>block：区块，JS使用的大括号，{}，大括号会将其内部的相关语句组合在一起。<br>scope：作用域，全局作用域及函数级作用域。<br>条件语句：</p>
+<ul>
+<li>else总是跟随距离自己最近的if语句。</li>
+<li>switch语句无break，贯穿现象，switch内部使用严格相对运算符（===）。</li>
+<li>三元运算符：(condition) ? expr1:expr2<br>break: 跳出代码块或循环。<br>continue: 跳过当次（本轮）的循环。<br>对于多重嵌套循环，break与condition只针对最内层（本层及子层）<br>label：定位符（可以是任意标识符），用于跳转至程序任意位置。<br>数据类型：按照《JavaScript高级程序设计》理解的是 基本数据类型和引用数据类型，在这本书中阮老师使用原始数据类型、合成类型和其他来区分。<br>Primitive type: 原始类型（number,string,boolean）<br>Complex type: 合成类型（object）<br>特殊值： undefined、null<br>Object：狭义的对象仅指Object，array，function都是一种对象类型，要是再往广义说，那就是万物皆对象了。<br>function：处理数据的方法,JS把函数当成一种数据类型，typeof(function)返回function，可以赋值、传递。<br>typeof(): 原始数据类型、undefined及function返回自己本身类型，其他都是Object，包括window,[],{}。<br>undefined： 以下四种情况返回undefined<ul>
+<li>变量声明未赋值</li>
+<li>函数没有返回值</li>
+<li>对象没有赋值的属性</li>
+<li>调用函数时不提供应有的参数<br>Float：浮点数存在不精确问题。<br>NaN: 不等于任何数包括自己。<br>isNaN(): 只对数值有效，传入其他值会先被转成数值。<br>parseInt(): 字符串转整数，可以传入第二个参数用来做进制转换<br>parseFloat(): 字符串转浮点数。<br>object：对象，万恶的核心，无序数据集合，键值对的形式。<br>键值对：键名–&gt;property（属性），键值为函数时，代表方法。<br>点运算符与方括号运算符都可以用来读取属性，但是数组中不用点运算符。<br>全局变量都是window的属性。<br>Object.keys(obj)：查看对象的所有属性。<br>delete：删除对象本身的属性，无法删除window属性，也无法删除继承的属性。<br>in运算符：检查某个属性是否在对象内，不能识别继承的属性。<br>for…in: 用来遍历一个对象的全部属性，只遍历(enumerable)可以遍历到的属性，跳过不开遍历的。包括自身属性及所有继承的属性。<br>Array：多维数组含义，数组可以看成一个键名为数值键且从’0’开始特殊对象。<br>arr.length=0: 数组清空。<br>array-like object： 类似数组对象，只要有length属性就是类似数组的对象，arguments，DOM元素集，字符串。<br>var arr=Array.prototype.slice.call(array-like): 类数组对象转数组<br>空位元素<br>Function Declaration:函数声明<br>Function Expression：函数表达式<br>构造函数：只有最后一个函数会被当做函数体<br>函数重复声明覆盖<br>函数声明提升<br>函数的属性：</li>
+<li>name：function之后的函数名</li>
+<li>length：定义函数时的形式参数个数，调用时不改变</li>
+<li>toString(): 返回函数源码包括内部注释<br>函数级作用域：function内局部变量；只作用在自身内对内部函数不起作用；函数执行时所在的作用域是定义时的作用域。<br>pass by value：对于原始数据类型使用传值传递，函数内部修改不影响原始值<br>pass by reference：对于复合数据类型使用传址传递，函数内部修改属性值会修改原始属性。<br>chain scope：链式作用域<br>closure：闭包</li>
+<li>实现在函数外部读取函数内部声明的变量</li>
+<li>chain scope 子对象会向上逐级寻找父对象的变量<br>运用chain scope，把子对象作为父对象返回值实现外部读取内部变量。</li>
+<li>定义在一个函数内部的函数</li>
+<li>特点：记住诞生环境，得到诞生环境内部变量</li>
+<li>作用：读取函数内部变量；让这些变量始终保持在内存中；函数内部作用域接口；封装对象的私有属性和私有方法。</li>
+<li>正因为闭包会保存在内存中，所以不能滥用。多了会影响网页性能。<br>IIFE：理解调用的函数表达式（匿名函数使用）</li>
+<li>圆括号方法</li>
+<li>运算符方法</li>
+<li>new方法</li>
+<li>true&amp;&amp;方法</li>
+<li>0;方法</li>
+<li>目的：不必为函数命名，避免污染全局变量；内部形成单独作用域，可封装一些无法读取的私有变量<br>Error：JS原生错误类型</li>
+<li>SyntaxError：语法错误</li>
+<li>ReferenceError：引用一个不存在的变量</li>
+<li>RangeError：超出有效值范围</li>
+<li>TypeError：变量或参数不是预期类型</li>
+<li>URIError：URI相关函数参数不正确</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/27/JavaScript标准参考教程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-日有所思，夜有所梦" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -446,6 +557,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">读书笔记</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">技能点+1</a>
