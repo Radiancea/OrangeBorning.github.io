@@ -202,15 +202,14 @@
 <ul>
 <li>else总是跟随距离自己最近的if语句。</li>
 <li>switch语句无break，贯穿现象，switch内部使用严格相对运算符（===）。</li>
-<li>三元运算符：(condition) ? expr1:expr2<br>break: 跳出代码块或循环。<br>continue: 跳过当次（本轮）的循环。<br>对于多重嵌套循环，break与condition只针对最内层（本层及子层）<br>label：定位符（可以是任意标识符），用于跳转至程序任意位置。<br>数据类型：按照《JavaScript高级程序设计》理解的是 基本数据类型和引用数据类型，在这本书中阮老师使用原始数据类型、合成类型和其他来区分。<br>Primitive type: 原始类型（number,string,boolean）<br>Complex type: 合成类型（object）<br>特殊值： undefined、null<br>Object：狭义的对象仅指Object，array，function都是一种对象类型，要是再往广义说，那就是万物皆对象了。<br>function：处理数据的方法,JS把函数当成一种数据类型，typeof(function)返回function，可以赋值、传递。<br>typeof(): 原始数据类型、undefined及function返回自己本身类型，其他都是Object，包括window,[],{}。<br>undefined： 以下四种情况返回undefined<ul>
-<li>变量声明未赋值</li>
-<li>函数没有返回值</li>
-<li>对象没有赋值的属性</li>
-<li>调用函数时不提供应有的参数</li>
+<li>三元运算符：(condition) ? expr1:expr2</li>
 </ul>
-</li>
-</ul>
-<p>Float：浮点数存在不精确问题。<br>NaN: 不等于任何数包括自己。<br>isNaN(): 只对数值有效，传入其他值会先被转成数值。<br>parseInt(): 字符串转整数，可以传入第二个参数用来做进制转换<br>parseFloat(): 字符串转浮点数。<br>object：对象，万恶的核心，无序数据集合，键值对的形式。<br>键值对：键名–&gt;property（属性），键值为函数时，代表方法。<br>点运算符与方括号运算符都可以用来读取属性，但是数组中不用点运算符。<br>全局变量都是window的属性。<br>Object.keys(obj)：查看对象的所有属性。<br>delete：删除对象本身的属性，无法删除window属性，也无法删除继承的属性。<br>in运算符：检查某个属性是否在对象内，不能识别继承的属性。<br>for…in: 用来遍历一个对象的全部属性，只遍历(enumerable)可以遍历到的属性，跳过不开遍历的。包括自身属性及所有继承的属性。<br>Array：多维数组含义，数组可以看成一个键名为数值键且从’0’开始特殊对象。<br>arr.length=0: 数组清空。<br>array-like object： 类似数组对象，只要有length属性就是类似数组的对象，arguments，DOM元素集，字符串。<br>var arr=Array.prototype.slice.call(array-like): 类数组对象转数组<br>空位元素<br>Function Declaration:函数声明<br>Function Expression：函数表达式<br>构造函数：只有最后一个函数会被当做函数体<br>函数重复声明覆盖<br>函数声明提升<br>函数的属性：</p>
+<p>break: 跳出代码块或循环。<br>continue: 跳过当次（本轮）的循环。<br>对于多重嵌套循环，break与condition只针对最内层（本层及子层）<br>label：定位符（可以是任意标识符），用于跳转至程序任意位置。<br>数据类型：按照《JavaScript高级程序设计》理解的是 基本数据类型和引用数据类型，在这本书中阮老师使用原始数据类型、合成类型和其他来区分。<br>Primitive type: 原始类型（number,string,boolean）<br>Complex type: 合成类型（object）<br>特殊值： undefined、null<br>Object：狭义的对象仅指Object，array，function都是一种对象类型，要是再往广义说，那就是万物皆对象了。<br>function：处理数据的方法,JS把函数当成一种数据类型，typeof(function)返回function，可以赋值、传递。<br>typeof(): 原始数据类型、undefined及function返回自己本身类型，其他都是Object，包括window,[],{}。<br>undefined： 以下四种情况返回undefined</p>
+<pre><code>- 变量声明未赋值
+- 函数没有返回值
+- 对象没有赋值的属性
+- 调用函数时不提供应有的参数
+</code></pre><p>Float：浮点数存在不精确问题。<br>NaN: 不等于任何数包括自己。<br>isNaN(): 只对数值有效，传入其他值会先被转成数值。<br>parseInt(): 字符串转整数，可以传入第二个参数用来做进制转换<br>parseFloat(): 字符串转浮点数。<br>object：对象，万恶的核心，无序数据集合，键值对的形式。<br>键值对：键名–&gt;property（属性），键值为函数时，代表方法。<br>点运算符与方括号运算符都可以用来读取属性，但是数组中不用点运算符。<br>全局变量都是window的属性。<br>Object.keys(obj)：查看对象的所有属性。<br>delete：删除对象本身的属性，无法删除window属性，也无法删除继承的属性。<br>in运算符：检查某个属性是否在对象内，不能识别继承的属性。<br>for…in: 用来遍历一个对象的全部属性，只遍历(enumerable)可以遍历到的属性，跳过不开遍历的。包括自身属性及所有继承的属性。<br>Array：多维数组含义，数组可以看成一个键名为数值键且从’0’开始特殊对象。<br>arr.length=0: 数组清空。<br>array-like object： 类似数组对象，只要有length属性就是类似数组的对象，arguments，DOM元素集，字符串。<br>var arr=Array.prototype.slice.call(array-like): 类数组对象转数组<br>空位元素<br>Function Declaration:函数声明<br>Function Expression：函数表达式<br>构造函数：只有最后一个函数会被当做函数体<br>函数重复声明覆盖<br>函数声明提升<br>函数的属性：</p>
 <pre><code>- name：function之后的函数名
 - length：定义函数时的形式参数个数，调用时不改变
 - toString(): 返回函数源码包括内部注释
@@ -235,7 +234,8 @@
 - RangeError：超出有效值范围
 - TypeError：变量或参数不是预期类型
 - URIError：URI相关函数参数不正确
-</code></pre>
+</code></pre><p>Object:对象；原生JS提供Object对象，所有其他对象都继承自这个对象。Object本身也是一个构造函数，可以直接通过它来生成新对象。<br>字面量写法：var obj={}，与new Object()等价。<br>prototype属性：所有构造函数都有一个prototype属性，指向一个原型对象。<br>Object.keys(obj)：返回一个数组，包含所有可枚举的属性。<br>Object。getOwnPropertyNames(obj):返回一个数组，包含所有属性，包括不可枚举的属性，如.length。<br>二者返回的都是本身的属性，不是继承的。</p>
+
       
 
       
