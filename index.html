@@ -177,80 +177,10 @@
         <p>无意中在阮一峰老师的GitHub中看见了这本书，刚好也想回顾一下自己的原生JS知识，所以点了进去，不出意外的发现了这本好书，于是再一次进入了刷书模式。</p>
 <p>下面是链接：</p>
 <ul>
-<li><a href="http://javascript.ruanyifeng.com/&quot;JavaScript Standards Reference Guide&quot;" target="_blank" rel="external">JavaScript Standards Reference Guide</a></li>
-</ul>
-<h2 id="导论部分："><a href="#导论部分：" class="headerlink" title="导论部分："></a>导论部分：</h2><p>导论部分介绍了JS的发展历史，以及目前的发展近况，算是长姿势部分，读起来也是蛮有意思的，也有阮老师一些让人耳目一新的个人见解，推荐阅读，可以让你慢慢进入这本书。</p>
-<h3 id="知识点记录："><a href="#知识点记录：" class="headerlink" title="知识点记录："></a>知识点记录：</h3><p>Java Script和Java没有直接关系，它是一种嵌入式语言（embedded），其本身不提供任何与<em>I/O</em>（输入/输出）相关的API，都要依靠宿主环境（host）提供，只适合嵌入大型应用程序环境，调用宿主环境提供的底层API。<br>宿主环境：浏览器，服务器（Node项目）。<br>JS：对象模型语言，宿主环境通过这个模型，描述自己的功能和操作接口，通过JS控制这些功能。<br>浏览器API:</p>
-<pre><code>- 浏览器控制类：操作浏览器
-- DOM：Document Object Model
-- BOM: borwser Object Model
-</code></pre><p>服务器API(Node)：</p>
-<pre><code>- 操作系统API
-- 文件操作API
-- 网络通信API
-</code></pre><p>JS: 支持面向对象、面向过程、函数式编程，很灵活，各种写法。<br>1990年  万维网–&gt;命令行操作，字符窗口<br>1992年  NCSA–&gt;Mosaic,图形界面窗口<br>1994年  Netscape–&gt;Netscape Navigator<br>Netscape（网景公司）因最初的互联网条件及浏览器环境，迫切需要一种嵌入式脚本语言，控制浏览器，来实现简单的表单验证。<br>JS的基本语法有C和Java的影子，数据结构中原始值、对象等借鉴自Java，函数是与其他数据类型可以平起平坐的，所以可以使用函数式编程，在这里也引入了一个<em>闭包</em>的概念。在面向对象的的编程中使用了原型继承模型。</p>
-<p>Mocha–&gt;LiveScript–&gt;JavaScript–&gt;ECMAScript<br>-这里并不是表示JS变成了ES，而是说JS<em>促成了</em>ES，在<em>《JS高级程序设计》</em>中有专门一节介绍了JS的实现，ES是作为其核心内容和基础。<br>ES只是JS语言基本语法结构的标准化。<br>目前ES已结更新到ES7，按照以后一年一个版本的说法，只能说一句：路漫漫其修远兮，吾将上下而求索。</p>
-<ul>
-<li>以前一直以为第一个浏览器是Netscape，原来还有NCSA这会事。突然就联想到美国控制着全球网络这个事了。</li>
-</ul>
-<h3 id="语法部分："><a href="#语法部分：" class="headerlink" title="语法部分："></a>语法部分：</h3><p>这部分可以回顾下JS的基本语法、数据类型、对象、函数等基础知识。此外书中还特别介绍了原生JS错误处理机制，以及编程风格。虽然只有短短两节，但是也可以在脑子中留下印象。虽然这两部分其实早已融入平时编码中。还是推荐再看一下，特别是回顾下自己的代码风格。把编码当做自己的作品，用心去对待。</p>
-<h3 id="知识点记录：-1"><a href="#知识点记录：-1" class="headerlink" title="知识点记录："></a>知识点记录：</h3><p>line：JS逐行执行，执行单位为行（line）。<br>statement：执行语句。<br>expression：表达式，一定是要返回一个值。<br>空语句：; 可以作为JS安全语句。<br>Variable: 变量，使用变量等同于引用值。JS的声明和赋值在编码时可以写在同一行，但在JS引擎解析下，还是会先声明变量，这也是之后变量提升的由来，建议书写中声明部分之前提前。JS中的变量可以只声明不赋值，这个变量将会引用一个undefined的数据类型，作为自己的值保存起来。</p>
-<pre><code>- 变量会根据所赋值改变数据类型。
-- 已经声明的变量在同一作用域（scope）下再次声明是无效的。
-- 已经声明的变量在同一作用域（scope）下再次声明且赋值，其实执行的就是变量赋值。
-</code></pre><p>delete: 无法删除顶级的window属性，<em>无法删除声明了的变量</em>。<br>Variable Hoisting：变量提升，在JS引擎解析下，所有被声明的变量都很先提升到当前作用域顶部。赋值部分位置不变。<br>Identifier：标识符–&gt;用来识别对象的名称，变量名，函数名都是常见的标识符。JS中的标识符有命名规则，这里就不再赘述。<br>block：区块，JS使用的大括号，{}，大括号会将其内部的相关语句组合在一起。<br>scope：作用域，全局作用域及函数级作用域。<br>条件语句：</p>
-<ul>
-<li>else总是跟随距离自己最近的if语句。</li>
-<li>switch语句无break，贯穿现象，switch内部使用严格相对运算符（===）。</li>
-<li>三元运算符：(condition) ? expr1:expr2</li>
-</ul>
-<p>break: 跳出代码块或循环。<br>continue: 跳过当次（本轮）的循环。<br>对于多重嵌套循环，break与condition只针对最内层（本层及子层）<br>label：定位符（可以是任意标识符），用于跳转至程序任意位置。<br>数据类型：按照《JavaScript高级程序设计》理解的是 基本数据类型和引用数据类型，在这本书中阮老师使用原始数据类型、合成类型和其他来区分。<br>Primitive type: 原始类型（number,string,boolean）<br>Complex type: 合成类型（object）<br>特殊值： undefined、null<br>Object：狭义的对象仅指Object，array，function都是一种对象类型，要是再往广义说，那就是万物皆对象了。<br>function：处理数据的方法,JS把函数当成一种数据类型，typeof(function)返回function，可以赋值、传递。<br>typeof(): 原始数据类型、undefined及function返回自己本身类型，其他都是Object，包括window,[],{}。<br>undefined： 以下四种情况返回undefined</p>
-<pre><code>- 变量声明未赋值
-- 函数没有返回值
-- 对象没有赋值的属性
-- 调用函数时不提供应有的参数
-</code></pre><p>Float：浮点数存在不精确问题。<br>NaN: 不等于任何数包括自己。<br>isNaN(): 只对数值有效，传入其他值会先被转成数值。<br>parseInt(): 字符串转整数，可以传入第二个参数用来做进制转换<br>parseFloat(): 字符串转浮点数。<br>object：对象，万恶的核心，无序数据集合，键值对的形式。<br>键值对：键名–&gt;property（属性），键值为函数时，代表方法。<br>点运算符与方括号运算符都可以用来读取属性，但是数组中不用点运算符。<br>全局变量都是window的属性。<br>Object.keys(obj)：查看对象的所有属性。<br>delete：删除对象本身的属性，无法删除window属性，也无法删除继承的属性。<br>in运算符：检查某个属性是否在对象内，不能识别继承的属性。<br>for…in: 用来遍历一个对象的全部属性，只遍历(enumerable)可以遍历到的属性，跳过不开遍历的。包括自身属性及所有继承的属性。<br>Array：多维数组含义，数组可以看成一个键名为数值键且从’0’开始特殊对象。<br>arr.length=0: 数组清空。<br>array-like object： 类似数组对象，只要有length属性就是类似数组的对象，arguments，DOM元素集，字符串。<br>var arr=Array.prototype.slice.call(array-like): 类数组对象转数组<br>空位元素<br>Function Declaration:函数声明<br>Function Expression：函数表达式<br>构造函数：只有最后一个函数会被当做函数体<br>函数重复声明覆盖<br>函数声明提升<br>函数的属性：</p>
-<pre><code>- name：function之后的函数名
-- length：定义函数时的形式参数个数，调用时不改变
-- toString(): 返回函数源码包括内部注释
-</code></pre><p>函数级作用域：function内局部变量；只作用在自身内对内部函数不起作用；函数执行时所在的作用域是定义时的作用域。<br>pass by value：对于原始数据类型使用传值传递，函数内部修改不影响原始值<br>pass by reference：对于复合数据类型使用传址传递，函数内部修改属性值会修改原始属性。<br>chain scope：链式作用域<br>closure：闭包</p>
-<pre><code>- 实现在函数外部读取函数内部声明的变量
-- chain scope 子对象会向上逐级寻找父对象的变量
-</code></pre><p>运用chain scope，把子对象作为父对象返回值实现外部读取内部变量。</p>
-<pre><code>- 定义在一个函数内部的函数
-- 特点：记住诞生环境，得到诞生环境内部变量
-- 作用：读取函数内部变量；让这些变量始终保持在内存中；函数内部作用域接口；封装对象的私有属性和私有方法。
-- 正因为闭包会保存在内存中，所以不能滥用。多了会影响网页性能。
-</code></pre><p>IIFE：理解调用的函数表达式（匿名函数使用）</p>
-<pre><code>- 圆括号方法
-- 运算符方法
-- new方法
-- true&amp;&amp;方法
-- 0;方法
-- 目的：不必为函数命名，避免污染全局变量；内部形成单独作用域，可封装一些无法读取的私有变量
-</code></pre><p>Error：JS原生错误类型</p>
-<pre><code>- SyntaxError：语法错误
-- ReferenceError：引用一个不存在的变量
-- RangeError：超出有效值范围
-- TypeError：变量或参数不是预期类型
-- URIError：URI相关函数参数不正确
-</code></pre><p>Object:对象；原生JS提供Object对象，所有其他对象都继承自这个对象。Object本身也是一个构造函数，可以直接通过它来生成新对象。<br>字面量写法：var obj={}，与new Object()等价。<br>prototype属性：所有构造函数都有一个prototype属性，指向一个原型对象。<br>Object.keys(obj)：返回一个数组，包含所有可枚举的属性。<br>Object。getOwnPropertyNames(obj):返回一个数组，包含所有属性，包括不可枚举的属性，如.length。<br>二者返回的都是本身的属性，不是继承的。</p>
-<p>对象属性模型的相关方法:</p>
-<pre><code>- Object.getOwnPropertyDescriptor(): 获取某个属性的attributes对象；
-- Object.defineProperty(): 通过attributes对象，定义某个属性；
-- Object.defineProperties(): 通过attributes对象，定义多个属性；
-- Object.getOwnPropertyNames(): 返回直接定义在某个对象上面的全部属性名称。
-</code></pre><p>控制对象状态的方法：</p>
-<pre><code>- Object.preventExtensions(): 防止对象扩展；
-- Object.isExtensible(): 判断对象是否可扩展；
-- Object.seal(): 禁止对象配置；
-- Object.isSealed(): 判断一个对象是否可配置；
-- Object.freeze(): 冻结一个对象；
-- Object.isFrozen(): 判断一个对象是否被冻结。
-</code></pre><p>原型链相关方法：</p>
-<pre><code>- Object.create(): 该方法可以指定原型对象和属性，返回一个新的对象；
-- Object.getPrototypeOf(): 获取对象的Prototype对象
-</code></pre>
+<li><a href="http://javascript.ruanyifeng.com/&quot;JavaScript Standards Reference Guide&quot;" target="_blank" rel="external">JavaScript Standards Reference Guide</a>
+        
+          <a class="article-more-a" href="/2017/05/27/JavaScript标准参考教程/#more">more >></a>
+        
       
 
       
@@ -367,21 +297,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="写在前面的话："><a href="#写在前面的话：" class="headerlink" title="写在前面的话："></a>写在前面的话：</h2><p>也许自己生来就是个喜欢瞎折腾的人，也不记得自己在瞎折腾的路上走了多少坑。想想还是把自己走过来的坑留下点脚印才是对的，人生不过几十年。不留下点痕迹，真的怕老了的时候把自己忘掉。<br>闲话少叙，以下内容是我一个坑一个坑走过来的。下面慢慢告诉大家如何实现自己的小目标——一步一步实现Hexo博客搭建。</p>
-<h2 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h2><p>你需要了解Hexo，至少知道他是什么，也不用看完，因为看完你也不一定懂，懂你也不一定会。<br><a href="https://hexo.io/" title="hexo文档" target="_blank" rel="external">Hexo文档</a><br>你需要为Hexo准备运行环境，至于为什么请看看文档。</p>
-<ul>
-<li>Node.js <a href="https://nodejs.org/" title="nodejs下载地址" target="_blank" rel="external">nodejs官网</a></li>
-<li>Git <a href="https://git-scm.com/download/" title="git下载地址" target="_blank" rel="external">git官网</a></li>
-</ul>
-<p>小提示：</p>
-<ol>
-<li>本文仅针对Windows系统，原谅我没钱os，没能力Linux。</li>
-<li>下载的时候如果不知道你的电脑是32bit还是64bit请搞懂，如果懒得懂32位适合你，没毛病。</li>
-<li>先不要急着安装，先往下看。</li>
-</ol>
-<h2 id="Node-js安装："><a href="#Node-js安装：" class="headerlink" title="Node.js安装："></a>Node.js安装：</h2><p>下载好适合自己机器的Node后，开始安装，按照Hexo文档要求，务必选择<em>Add to PATH</em>，点击一下就可以。<br>建议尽量按照默认路径安装，安装速度很快。在片刻等待后安装完成。</p>
-<p>接下来，检查是否安装成功。打开运行窗口：<br>在运行窗口中输入<em>cmd</em>，进入命令行界面，输入：<br>    <em>node -v</em><br>出现以下界面说明安装成功：<br><img src="http://zhuxiaopeng.org/photos/nodesetup.png" alt="node版本" title="node安装确认"><br>继续在命令行界面输入：<br>    <em>npm -v</em><br>出现以下界面说明安装成功：<br><img src="http://zhuxiaopeng.org/photos/npmsetup.png" alt="npm版本" title="npm安装确认"></p>
-
+        <h2 id="写在前面的话："><a href="#写在前面的话：" class="headerlink" title="写在前面的话："></a>写在前面的话：</h2><p>也许自己生来就是个喜欢瞎折腾的人，也不记得自己在瞎折腾的路上走了多少坑。想想还是把自己走过来的坑留下点脚印才是对的，人生不过几十年。不留下点痕迹，真的怕老了的时候把自己忘掉。<br>闲话少叙，以下内容是我一个坑一个坑走过来的。下面慢慢告诉大家如何实现自己的小目标——一步一步实现Hexo博客搭建。<br>
+        
+          <a class="article-more-a" href="/2017/05/24/一步一步实现Hexo博客搭建-1/#more">more >></a>
+        
       
 
       
