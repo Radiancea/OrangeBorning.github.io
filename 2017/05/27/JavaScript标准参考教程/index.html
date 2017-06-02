@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://zhuxiaopeng.org/2017/05/27/JavaScript标准参考教程/index.html">
 <meta property="og:site_name" content="脱缰的小毛驴">
 <meta property="og:description" content="无意中在阮一峰老师的GitHub中看见了这本书，刚好也想回顾一下自己的原生JS知识，所以点了进去，不出意外的发现了这本好书，于是再一次进入了刷书模式。">
-<meta property="og:updated_time" content="2017-06-02T14:28:20.986Z">
+<meta property="og:updated_time" content="2017-06-02T14:30:50.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript标准参考教程">
 <meta name="twitter:description" content="无意中在阮一峰老师的GitHub中看见了这本书，刚好也想回顾一下自己的原生JS知识，所以点了进去，不出意外的发现了这本好书，于是再一次进入了刷书模式。">
@@ -236,7 +236,8 @@
 - RangeError：超出有效值范围
 - TypeError：变量或参数不是预期类型
 - URIError：URI相关函数参数不正确
-</code></pre><p>Object:对象；原生JS提供Object对象，所有其他对象都继承自这个对象。Object本身也是一个构造函数，可以直接通过它来生成新对象。<br>字面量写法：var obj={}，与new Object()等价。<br>prototype属性：所有构造函数都有一个prototype属性，指向一个原型对象。<br>Object.keys(obj)：返回一个数组，包含所有可枚举的属性。<br>Object。getOwnPropertyNames(obj):返回一个数组，包含所有属性，包括不可枚举的属性，如.length。<br>二者返回的都是本身的属性，不是继承的。</p>
+</code></pre><h2 id="Object对象："><a href="#Object对象：" class="headerlink" title="Object对象："></a>Object对象：</h2><p>Object:对象；原生JS提供Object对象，所有其他对象都继承自这个对象。Object本身也是一个构造函数，可以直接通过它来生成新对象。</p>
+<h3 id="知识点记录：-2"><a href="#知识点记录：-2" class="headerlink" title="知识点记录："></a>知识点记录：</h3><p>字面量写法：var obj={}，与new Object()等价。<br>prototype属性：所有构造函数都有一个prototype属性，指向一个原型对象。<br>Object.keys(obj)：返回一个数组，包含所有可枚举的属性。<br>Object。getOwnPropertyNames(obj):返回一个数组，包含所有属性，包括不可枚举的属性，如.length。<br>二者返回的都是本身的属性，不是继承的。</p>
 <p>对象属性模型的相关方法:</p>
 <pre><code>- Object.getOwnPropertyDescriptor(): 获取某个属性的attributes对象；
 - Object.defineProperty(): 通过attributes对象，定义某个属性；
