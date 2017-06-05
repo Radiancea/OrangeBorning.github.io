@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zhuxiaopeng.org">
-  <title>JavaScript标准参考教程 | 脱缰的小毛驴</title>
+  <title>翻译npm文档 | 脱缰的小毛驴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="无意中在阮一峰老师的GitHub中看见了这本书，刚好也想回顾一下自己的原生JS知识，所以点了进去，不出意外的发现了这本好书，于是再一次进入了刷书模式。">
-<meta name="keywords" content="JavaScript">
+  <meta name="description" content="npm DocsWhat is npm? npm是什么？npm makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that you’re sharing. npm使得JavaScript开发者在分享和复用代码，以及更新他们所分享的代码时变得">
+<meta name="keywords" content="npm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript标准参考教程">
-<meta property="og:url" content="http://zhuxiaopeng.org/2017/05/27/JavaScript标准参考教程/index.html">
+<meta property="og:title" content="翻译npm文档">
+<meta property="og:url" content="http://zhuxiaopeng.org/2017/06/05/翻译npm文档/index.html">
 <meta property="og:site_name" content="脱缰的小毛驴">
-<meta property="og:description" content="无意中在阮一峰老师的GitHub中看见了这本书，刚好也想回顾一下自己的原生JS知识，所以点了进去，不出意外的发现了这本好书，于是再一次进入了刷书模式。">
-<meta property="og:updated_time" content="2017-06-02T15:37:07.311Z">
+<meta property="og:description" content="npm DocsWhat is npm? npm是什么？npm makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that you’re sharing. npm使得JavaScript开发者在分享和复用代码，以及更新他们所分享的代码时变得">
+<meta property="og:updated_time" content="2017-06-05T14:22:36.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript标准参考教程">
-<meta name="twitter:description" content="无意中在阮一峰老师的GitHub中看见了这本书，刚好也想回顾一下自己的原生JS知识，所以点了进去，不出意外的发现了这本好书，于是再一次进入了刷书模式。">
+<meta name="twitter:title" content="翻译npm文档">
+<meta name="twitter:description" content="npm DocsWhat is npm? npm是什么？npm makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that you’re sharing. npm使得JavaScript开发者在分享和复用代码，以及更新他们所分享的代码时变得">
   
     <link rel="alternative" href="/atom.xml" title="脱缰的小毛驴" type="application/atom+xml">
   
@@ -157,103 +157,146 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaScript标准参考教程" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-翻译npm文档" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript标准参考教程
+      翻译npm文档
     </h1>
   
 
         
-        <a href="/2017/05/27/JavaScript标准参考教程/" class="archive-article-date">
-  	<time datetime="2017-05-27T09:12:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-27</time>
+        <a href="/2017/06/05/翻译npm文档/" class="archive-article-date">
+  	<time datetime="2017-06-05T14:20:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>无意中在阮一峰老师的GitHub中看见了这本书，刚好也想回顾一下自己的原生JS知识，所以点了进去，不出意外的发现了这本好书，于是再一次进入了刷书模式。<br><a id="more"></a><br>下面是链接：</p>
-<ul>
-<li><a href="http://javascript.ruanyifeng.com/&quot;JavaScript Standards Reference Guide&quot;" target="_blank" rel="external">JavaScript Standards Reference Guide</a></li>
-</ul>
-<h2 id="导论部分："><a href="#导论部分：" class="headerlink" title="导论部分："></a>导论部分：</h2><p>导论部分介绍了JS的发展历史，以及目前的发展近况，算是长姿势部分，读起来也是蛮有意思的，也有阮老师一些让人耳目一新的个人见解，推荐阅读，可以让你慢慢进入这本书。</p>
-<h3 id="知识点记录："><a href="#知识点记录：" class="headerlink" title="知识点记录："></a>知识点记录：</h3><p>Java Script和Java没有直接关系，它是一种嵌入式语言（embedded），其本身不提供任何与<em>I/O</em>（输入/输出）相关的API，都要依靠宿主环境（host）提供，只适合嵌入大型应用程序环境，调用宿主环境提供的底层API。<br>宿主环境：浏览器，服务器（Node项目）。<br>JS：对象模型语言，宿主环境通过这个模型，描述自己的功能和操作接口，通过JS控制这些功能。<br>浏览器API:</p>
-<pre><code>- 浏览器控制类：操作浏览器
-- DOM：Document Object Model
-- BOM: borwser Object Model
-</code></pre><p>服务器API(Node)：</p>
-<pre><code>- 操作系统API
-- 文件操作API
-- 网络通信API
-</code></pre><p>JS: 支持面向对象、面向过程、函数式编程，很灵活，各种写法。<br>1990年  万维网–&gt;命令行操作，字符窗口<br>1992年  NCSA–&gt;Mosaic,图形界面窗口<br>1994年  Netscape–&gt;Netscape Navigator<br>Netscape（网景公司）因最初的互联网条件及浏览器环境，迫切需要一种嵌入式脚本语言，控制浏览器，来实现简单的表单验证。<br>JS的基本语法有C和Java的影子，数据结构中原始值、对象等借鉴自Java，函数是与其他数据类型可以平起平坐的，所以可以使用函数式编程，在这里也引入了一个<em>闭包</em>的概念。在面向对象的的编程中使用了原型继承模型。</p>
-<p>Mocha–&gt;LiveScript–&gt;JavaScript–&gt;ECMAScript<br>-这里并不是表示JS变成了ES，而是说JS<em>促成了</em>ES，在<em>《JS高级程序设计》</em>中有专门一节介绍了JS的实现，ES是作为其核心内容和基础。<br>ES只是JS语言基本语法结构的标准化。<br>目前ES已结更新到ES7，按照以后一年一个版本的说法，只能说一句：路漫漫其修远兮，吾将上下而求索。</p>
-<ul>
-<li>以前一直以为第一个浏览器是Netscape，原来还有NCSA这会事。突然就联想到美国控制着全球网络这个事了。</li>
-</ul>
-<h3 id="语法部分："><a href="#语法部分：" class="headerlink" title="语法部分："></a>语法部分：</h3><p>这部分可以回顾下JS的基本语法、数据类型、对象、函数等基础知识。此外书中还特别介绍了原生JS错误处理机制，以及编程风格。虽然只有短短两节，但是也可以在脑子中留下印象。虽然这两部分其实早已融入平时编码中。还是推荐再看一下，特别是回顾下自己的代码风格。把编码当做自己的作品，用心去对待。</p>
-<h3 id="知识点记录：-1"><a href="#知识点记录：-1" class="headerlink" title="知识点记录："></a>知识点记录：</h3><p>line：JS逐行执行，执行单位为行（line）。<br>statement：执行语句。<br>expression：表达式，一定是要返回一个值。<br>空语句：; 可以作为JS安全语句。<br>Variable: 变量，使用变量等同于引用值。JS的声明和赋值在编码时可以写在同一行，但在JS引擎解析下，还是会先声明变量，这也是之后变量提升的由来，建议书写中声明部分之前提前。JS中的变量可以只声明不赋值，这个变量将会引用一个undefined的数据类型，作为自己的值保存起来。</p>
-<pre><code>- 变量会根据所赋值改变数据类型。
-- 已经声明的变量在同一作用域（scope）下再次声明是无效的。
-- 已经声明的变量在同一作用域（scope）下再次声明且赋值，其实执行的就是变量赋值。
-</code></pre><p>delete: 无法删除顶级的window属性，<em>无法删除声明了的变量</em>。<br>Variable Hoisting：变量提升，在JS引擎解析下，所有被声明的变量都很先提升到当前作用域顶部。赋值部分位置不变。<br>Identifier：标识符–&gt;用来识别对象的名称，变量名，函数名都是常见的标识符。JS中的标识符有命名规则，这里就不再赘述。<br>block：区块，JS使用的大括号，{}，大括号会将其内部的相关语句组合在一起。<br>scope：作用域，全局作用域及函数级作用域。<br>条件语句：</p>
-<ul>
-<li>else总是跟随距离自己最近的if语句。</li>
-<li>switch语句无break，贯穿现象，switch内部使用严格相对运算符（===）。</li>
-<li>三元运算符：(condition) ? expr1:expr2</li>
-</ul>
-<p>break: 跳出代码块或循环。<br>continue: 跳过当次（本轮）的循环。<br>对于多重嵌套循环，break与condition只针对最内层（本层及子层）<br>label：定位符（可以是任意标识符），用于跳转至程序任意位置。<br>数据类型：按照《JavaScript高级程序设计》理解的是 基本数据类型和引用数据类型，在这本书中阮老师使用原始数据类型、合成类型和其他来区分。<br>Primitive type: 原始类型（number,string,boolean）<br>Complex type: 合成类型（object）<br>特殊值： undefined、null<br>Object：狭义的对象仅指Object，array，function都是一种对象类型，要是再往广义说，那就是万物皆对象了。<br>function：处理数据的方法,JS把函数当成一种数据类型，typeof(function)返回function，可以赋值、传递。<br>typeof(): 原始数据类型、undefined及function返回自己本身类型，其他都是Object，包括window,[],{}。<br>undefined： 以下四种情况返回undefined</p>
-<pre><code>- 变量声明未赋值
-- 函数没有返回值
-- 对象没有赋值的属性
-- 调用函数时不提供应有的参数
-</code></pre><p>Float：浮点数存在不精确问题。<br>NaN: 不等于任何数包括自己。<br>isNaN(): 只对数值有效，传入其他值会先被转成数值。<br>parseInt(): 字符串转整数，可以传入第二个参数用来做进制转换<br>parseFloat(): 字符串转浮点数。<br>object：对象，万恶的核心，无序数据集合，键值对的形式。<br>键值对：键名–&gt;property（属性），键值为函数时，代表方法。<br>点运算符与方括号运算符都可以用来读取属性，但是数组中不用点运算符。<br>全局变量都是window的属性。<br>Object.keys(obj)：查看对象的所有属性。<br>delete：删除对象本身的属性，无法删除window属性，也无法删除继承的属性。<br>in运算符：检查某个属性是否在对象内，不能识别继承的属性。<br>for…in: 用来遍历一个对象的全部属性，只遍历(enumerable)可以遍历到的属性，跳过不开遍历的。包括自身属性及所有继承的属性。<br>Array：多维数组含义，数组可以看成一个键名为数值键且从’0’开始特殊对象。<br>arr.length=0: 数组清空。<br>array-like object： 类似数组对象，只要有length属性就是类似数组的对象，arguments，DOM元素集，字符串。<br>var arr=Array.prototype.slice.call(array-like): 类数组对象转数组<br>空位元素<br>Function Declaration:函数声明<br>Function Expression：函数表达式<br>构造函数：只有最后一个函数会被当做函数体<br>函数重复声明覆盖<br>函数声明提升<br>函数的属性：</p>
-<pre><code>- name：function之后的函数名
-- length：定义函数时的形式参数个数，调用时不改变
-- toString(): 返回函数源码包括内部注释
-</code></pre><p>函数级作用域：function内局部变量；只作用在自身内对内部函数不起作用；函数执行时所在的作用域是定义时的作用域。<br>pass by value：对于原始数据类型使用传值传递，函数内部修改不影响原始值<br>pass by reference：对于复合数据类型使用传址传递，函数内部修改属性值会修改原始属性。<br>chain scope：链式作用域<br>closure：闭包</p>
-<pre><code>- 实现在函数外部读取函数内部声明的变量
-- chain scope 子对象会向上逐级寻找父对象的变量
-</code></pre><p>运用chain scope，把子对象作为父对象返回值实现外部读取内部变量。</p>
-<pre><code>- 定义在一个函数内部的函数
-- 特点：记住诞生环境，得到诞生环境内部变量
-- 作用：读取函数内部变量；让这些变量始终保持在内存中；函数内部作用域接口；封装对象的私有属性和私有方法。
-- 正因为闭包会保存在内存中，所以不能滥用。多了会影响网页性能。
-</code></pre><p>IIFE：理解调用的函数表达式（匿名函数使用）</p>
-<pre><code>- 圆括号方法
-- 运算符方法
-- new方法
-- true&amp;&amp;方法
-- 0;方法
-- 目的：不必为函数命名，避免污染全局变量；内部形成单独作用域，可封装一些无法读取的私有变量
-</code></pre><p>Error：JS原生错误类型</p>
-<pre><code>- SyntaxError：语法错误
-- ReferenceError：引用一个不存在的变量
-- RangeError：超出有效值范围
-- TypeError：变量或参数不是预期类型
-- URIError：URI相关函数参数不正确
-</code></pre><h2 id="Object对象："><a href="#Object对象：" class="headerlink" title="Object对象："></a>Object对象：</h2><p>Object:对象；原生JS提供Object对象，所有其他对象都继承自这个对象。Object本身也是一个构造函数，可以直接通过它来生成新对象。</p>
-<h3 id="知识点记录：-2"><a href="#知识点记录：-2" class="headerlink" title="知识点记录："></a>知识点记录：</h3><p>字面量写法：var obj={}，与new Object()等价。<br>prototype属性：所有构造函数都有一个prototype属性，指向一个原型对象。<br>Object.keys(obj)：返回一个数组，包含所有可枚举的属性。<br>Object。getOwnPropertyNames(obj):返回一个数组，包含所有属性，包括不可枚举的属性，如.length。<br>二者返回的都是本身的属性，不是继承的。</p>
-<p>对象属性模型的相关方法:</p>
-<pre><code>- Object.getOwnPropertyDescriptor(): 获取某个属性的attributes对象；
-- Object.defineProperty(): 通过attributes对象，定义某个属性；
-- Object.defineProperties(): 通过attributes对象，定义多个属性；
-- Object.getOwnPropertyNames(): 返回直接定义在某个对象上面的全部属性名称。
-</code></pre><p>控制对象状态的方法：</p>
-<pre><code>- Object.preventExtensions(): 防止对象扩展；
-- Object.isExtensible(): 判断对象是否可扩展；
-- Object.seal(): 禁止对象配置；
-- Object.isSealed(): 判断一个对象是否可配置；
-- Object.freeze(): 冻结一个对象；
-- Object.isFrozen(): 判断一个对象是否被冻结。
-</code></pre><p>原型链相关方法：</p>
-<pre><code>- Object.create(): 该方法可以指定原型对象和属性，返回一个新的对象；
-- Object.getPrototypeOf(): 获取对象的Prototype对象
-</code></pre>
+        <h1 id="npm-Docs"><a href="#npm-Docs" class="headerlink" title="npm Docs"></a>npm Docs</h1><h2 id="What-is-npm-npm是什么？"><a href="#What-is-npm-npm是什么？" class="headerlink" title="What is npm? npm是什么？"></a>What is npm? npm是什么？</h2><p>npm makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that you’re sharing.</p>
+<p>npm使得JavaScript开发者在分享和复用代码，以及更新他们所分享的代码时变得容易。</p>
+<hr>
+<p>If you’ve been working with JavaScript for a while, you might have heard of npm: npm makes it easy for JavaScript developers to share the code that they’ve created to solve particular problems, and for other developers to reuse that code in their own applications.</p>
+<p>如果你已经使用JavaScript工作过一段时间，你也许已经听说过npm：<br>npm使JavaScript开发者在分享他们那些解决特殊问题的代码时变得简单，而对于其他开发者而言，可以在自己的应用程序中使用这些代码。</p>
+<hr>
+<p>Once you’re depending on this code from other developers, npm makes it really easy to check to see if they’ve made any updates to it, and to download those updates when they’re made.</p>
+<p>一旦你的应用程序中使用了这些来自其他开发者的代码，npm会检查这些代码是否做了更新，并在更新后下载他。</p>
+<hr>
+<p>These bits of reusable code are called packages, or sometimes modules. A package is just a directory with one or more files in it, that also has a file called “package.json” with some metadata about this package. A typical application, such as a website, will depend on dozens or hundreds of packages. These packages are often small. The general idea is that you create a small building block which solves one problem and solves it well. This makes it possible for you to compose larger, custom solutions out of these small, shared building blocks.</p>
+<p>这些可重复使用的代码，我们称之为“包”，或者叫做“模块”。包只是一个文件夹，里面有一个或者多个文件，还有一个叫做”package.json”的文件，这个文件是这个包中一些元数据文件的目录。一个典型的应用程序，比如一个网站，可能有几十个或者几百个包。这些包一包都很小。npm的想法是，制作一个个可以很好解决某个单一问题的小模块。这可以让定制那些你所需要的共享小模块来解决一些大的项目方案成为可能。</p>
+<hr>
+<p>There’s lots of benefits to this. It makes it possible for your team to draw on expertise outside of your organization by bringing in packages from people who have focused on particular problem areas. But even if you don’t reuse code from people outside of your organization, using this kind of module based approach can actually help your team work together better, and can also make it possible to reuse code across projects.</p>
+<p>这样做有很多好处。这使你的团队可以使用那些其他组织完成的某个特殊问题领域的包。即便你不需要使用别人的代码，使用这种基于模块的方式，实际上也可以帮助你的团队更好的合作，并且还可以使其能够跨项目重复使用代码。</p>
+<hr>
+<p>You can find packages to help you build your application by browsing the npm website. When you’re browsing the website, you’ll find different kinds of packages. You’ll find lots of node modules. npm started as the node package manager, so you’ll find lots of modules which can be used on the server side. There are also lots of packages which add commands for you to use in the command line. And at this point you can find a number of packages which can be used in the browser, on the front end.</p>
+<p>你可以通过npm网站找到那些有助于构建你项目的包。当你浏览网站时，你将会找到很多不同的包。你会发现很多的节点模块。npm是一个节点模块，所有你将发现很多服务端使用的模块。这里也有很多模块你可以使用命令行命令来添加。还有一点，你可以找到很多在浏览器中使用的前端包。</p>
+<hr>
+<p>So now that you have an idea of what npm can do, let’s talk about how it works. When people talk about npm, they can be talking about one of three things. They could be talking about the website, which we’ve just been looking at. Or they could be talking about the registry, which is a big database of information about packages that people are sharing. Or the third thing they could be talking about is the client: when a developer decides to share their code, they use the npm client which is installed on their computer to publish that code up to the registry. And once there’s an entry for this package in the registry, then other developers can use their npm clients to install the package from the registry. The entry in the registry for this package is also reflected on the website, where there’s a page dedicated to this new package.</p>
+<p>现在你知道了npm是用来干什么的，再让我们来谈谈它是如何工作的。当人们在谈论npm时，他们可能讨论以下三种情况之一。他们可以讨论我们刚刚看的网站。或者可以讨论别人分享的包的数据信息注册表。或者，他们可以讨论第三件事，客户端：当开发者决定分享他们的代码时，他们使用装在他们电脑上的npm客户端来发布他们的代码到注册表。一旦他们有一个包的条目在这个注册表中，其他开发者可以使用他们的npm客户端从注册表中安装这个包。注册表中这个包的的条目也会反映在这个网站，那里有这个包的专属页面。</p>
+<hr>
+<p>So that’s what npm is. It’s a way to reuse code from other developers, and also a way to share your code with them, and it makes it easy to manage the different versions of code.</p>
+<p>那么这就是npm了。他是一种让开发者可以复用和分享代码的方式，它也可以很容易的管理不同版本的代码。</p>
+<hr>
+<h2 id="Installing-Node-js-and-updating-npm-安装Node-js与更新npm"><a href="#Installing-Node-js-and-updating-npm-安装Node-js与更新npm" class="headerlink" title="Installing Node.js and updating npm  安装Node.js与更新npm"></a>Installing Node.js and updating npm  安装Node.js与更新npm</h2><h3 id="Installing-Node-js-安装Node-js"><a href="#Installing-Node-js-安装Node-js" class="headerlink" title="Installing Node.js 安装Node.js"></a>Installing Node.js 安装Node.js</h3><hr>
+<p>If you’re using OS X or Windows, the best way to install Node.js is to use one of the installers from the Node.js download page. If you’re using Linux, you can use the installer, or you can check NodeSource’s binary distributions to see whether or not there’s a more recent version that works with your system.</p>
+<p>如果你使用的是OS X或者Windows，安装Node.js最好的方式是使用Node.js下载页面的安装包。如果你使用的是Linux，你可以使用安装包也可以去Node资源里选择适合你的最新的版本。</p>
+<hr>
+<p>Test: Run node -v. The version should be higher than v0.10.32.</p>
+<p>测试：在cmd中运行node -v。版本要在v0.10.32以上。</p>
+<hr>
+<h3 id="Updating-npm-更新npm"><a href="#Updating-npm-更新npm" class="headerlink" title="Updating npm  更新npm"></a>Updating npm  更新npm</h3><hr>
+<p>Node comes with npm installed so you should have a version of npm. However, npm gets updated more frequently than Node does, so you’ll want to make sure it’s the latest version.</p>
+<p>安装Node的时候也会安装npm，所有你应该有一个npm版本，npm的更新速度要比Node快很多，所以你可能想确保你是最新的版本。</p>
+<hr>
+<pre><code>npm install npm@latest -g
+</code></pre><p>在cmd中运行这条命令</p>
+<hr>
+<p>Test: Run npm -v. The version should be higher than 2.1.8.</p>
+<p>测试：运行npm -v。版本应该在2.1.8以上。</p>
+<hr>
+<h3 id="Installing-npm-manually-手动安装npm"><a href="#Installing-npm-manually-手动安装npm" class="headerlink" title="Installing npm manually  手动安装npm"></a>Installing npm manually  手动安装npm</h3><p>For more advanced users.</p>
+<p>高级用户。</p>
+<hr>
+<p>The npm module is available for download at </p>
+<p><a href="https://registry.npmjs.org/npm/-/npm-{VERSION}.tgz." title="npmjs" target="_blank" rel="external">https://registry.npmjs.org/npm/-/npm-{VERSION}.tgz.</a></p>
+<p>npm模块可以在这个网站下载。</p>
+<hr>
+<h2 id="Fixing-npm-permissions-修复npm权限"><a href="#Fixing-npm-permissions-修复npm权限" class="headerlink" title="Fixing npm permissions 修复npm权限"></a>Fixing npm permissions 修复npm权限</h2><p>You may receive an EACCES error when you try to install a package globally. This indicates that you do not have permission to write to the directories that npm uses to store global packages and commands.</p>
+<p>当你试着安装全局包时你可能会遇到一个无权限错误。这表明你没有权限在这个用来存储全局包和命令的npm目录中写入。</p>
+<hr>
+<p>You can fix this problem using one of three options:</p>
+<p>你可以使用下面三项中的一项来修复这个问题。</p>
+<hr>
+<ol>
+<li>Change the permission to npm’s default directory.  改变npm默认目录的权限</li>
+<li>Change npm’s default directory to another directory.     把npm默认目录改为其他目录</li>
+<li>Install node with a package manager that takes care of this for you.  使用包管理器安装节点</li>
+</ol>
+<p>You should back-up your computer before moving forward.</p>
+<p>在做这些之前你应该先给你的电脑备份。</p>
+<hr>
+<h3 id="Option-1-Change-the-permission-to-npm’s-default-directory-改变npm默认目录的权限"><a href="#Option-1-Change-the-permission-to-npm’s-default-directory-改变npm默认目录的权限" class="headerlink" title="Option 1: Change the permission to npm’s default directory  改变npm默认目录的权限"></a>Option 1: Change the permission to npm’s default directory  改变npm默认目录的权限</h3><ol>
+<li><p>Find the path to npm’s directory: 找到npm的目录路径</p>
+<p> <code>npm config get prefix</code> </p>
+<p> 运行这条命令</p>
+<p> For many systems, this will be  <strong>/usr/local</strong>. </p>
+<p> 多数系统将会显示<strong>/usr/local</strong></p>
+<p> <strong>WARNING</strong>: If the displayed path is just <strong>/usr</strong>, switch to Option 2 or you will mess up your permissions.</p>
+<p> <strong>警告</strong>：如果路径只显示<strong>/usr</strong>，换第二种方法，否则你将会搞乱你的权限。</p>
+</li>
+</ol>
+<ol>
+<li><p>Change the owner of npm’s directories to the name of the current user (your username!): 把npm目录的拥有者改成当前用户的名字</p>
+<p>  <code>sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}</code></p>
+<p> 运行这条命令</p>
+<p> This changes the permissions of the sub-folders used by npm and some other tools (<strong>lib/node_modules</strong>, <strong>bin</strong>, and <strong>share</strong>).</p>
+<p> 这会修改npm和其他一些工具的子文件权限。</p>
+</li>
+</ol>
+<hr>
+<h3 id="Option-2-Change-npm’s-default-directory-to-another-directory-把npm默认目录改为其他目录"><a href="#Option-2-Change-npm’s-default-directory-to-another-directory-把npm默认目录改为其他目录" class="headerlink" title="Option 2: Change npm’s default directory to another directory  把npm默认目录改为其他目录"></a>Option 2: Change npm’s default directory to another directory  把npm默认目录改为其他目录</h3><p>There are times when you do not want to change ownership of the default directory that npm uses (i.e. <strong>/usr</strong>) as this could cause some problems, for example if you are sharing the system with other users.</p>
+<p>有时候你不想改变npm的默认目录权限，因为这可能会导致一些问题，例如，如果你与其他用户共享系统的默认目录所有权，</p>
+<hr>
+<p>Instead, you can configure npm to use a different directory altogether. In our case, this will be a hidden directory in our home folder.</p>
+<p>作为替代方法，你可以使用不同的目录配置npm。在我们的例子中，这将会在我们的主文件夹中成为一个隐藏目录</p>
+<blockquote>
+<p>1.Make a directory for global installations: 为全局安装创建一个目录</p>
+</blockquote>
+<p><code>mkdir ~/.npm-global</code></p>
+<pre><code>运行条命令
+</code></pre><blockquote>
+<p>2.Configure npm to use the new directory path: 配置npm的新目录路径</p>
+</blockquote>
+<p><code>npm config set prefix &#39;~/.npm-global&#39;</code></p>
+<pre><code>运行这条命令
+</code></pre><blockquote>
+<p>3.Open or create a ~/.profile file and add this line: 打开或者创建.profile文件添加这一行：</p>
+</blockquote>
+<p><code>export PATH=~/.npm-global/bin:$PATH</code></p>
+<blockquote>
+<p>4.Back on the command line, update your system variables: 回到cmd中更新你的系统变量</p>
+</blockquote>
+<p><code>source ~/.profile</code></p>
+<hr>
+<p>Test: Download a package globally without using sudo.</p>
+<p>测试：不使用sudo下载一个b全局安装。</p>
+<p><code>npm install -g jshint</code></p>
+<hr>
+<p>Instead of steps 2-4 you can also use the corresponding ENV variable (e.g. if you don’t want to modify <strong>~/.profile</strong>):</p>
+<p>你也可以使用对应的环境变量来替代第2-4步（如果你不想改变 <strong>~/.profile</strong>）</p>
+<hr>
+<p><code>NPM_CONFIG_PREFIX=~/.npm-global</code></p>
+<hr>
+<h3 id="Option-3-Use-a-package-manager-that-takes-care-of-this-for-you-使用可以给你的包管理器"><a href="#Option-3-Use-a-package-manager-that-takes-care-of-this-for-you-使用可以给你的包管理器" class="headerlink" title="Option 3: Use a package manager that takes care of this for you. 使用可以给你的包管理器"></a>Option 3: Use a package manager that takes care of this for you. 使用可以给你的包管理器</h3><p>If you’re doing a fresh install of node on Mac OS you can avoid this problem altogether by using the Homebrew package manager. Homebrew sets things up out of the box with the correct permissions.</p>
+<p>如果你正在给你的Mac OS安装新的节点，你可以使用Homebrew包管理器来避免这个问题。Homerbrew会给你设置正确的权限</p>
+<hr>
+<p><code>brew install node</code></p>
+<hr>
+
       
 
       
@@ -266,7 +309,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
         		</li>
       		
 		</ul>
@@ -322,7 +365,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://zhuxiaopeng.org/2017/05/27/JavaScript标准参考教程/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://zhuxiaopeng.org/2017/06/05/翻译npm文档/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -336,18 +379,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/06/02/Git学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Git学习笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/05/24/一步一步实现Hexo博客搭建-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">一步一步实现Hexo博客搭建</div>
+    <a href="/2017/06/02/Git学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git学习笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -360,7 +394,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="JavaScript标准参考教程" data-title="JavaScript标准参考教程" data-url="http://zhuxiaopeng.org/2017/05/27/JavaScript标准参考教程/"></div>
+	<div class="ds-thread" data-thread-key="翻译npm文档" data-title="翻译npm文档" data-url="http://zhuxiaopeng.org/2017/06/05/翻译npm文档/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
