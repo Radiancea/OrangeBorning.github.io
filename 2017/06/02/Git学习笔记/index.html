@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://zhuxiaopeng.org/2017/06/02/Git学习笔记/index.html">
 <meta property="og:site_name" content="脱缰的小毛驴">
 <meta property="og:description" content="尽管已经用了一段时间的git，但都属于需要什么查什么，不会什么找什么的状态，这篇博文主要记录我的git学习。">
-<meta property="og:updated_time" content="2017-06-05T15:37:58.419Z">
+<meta property="og:updated_time" content="2017-06-05T15:40:08.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git学习笔记">
 <meta name="twitter:description" content="尽管已经用了一段时间的git，但都属于需要什么查什么，不会什么找什么的状态，这篇博文主要记录我的git学习。">
@@ -185,10 +185,7 @@
 <li>分布式管理系统</li>
 </ul>
 <p>集中式版本控制系统，如CVS与SVN，他的工作模式类似与去图书馆借书，所有的资源集中存放在中央服务器上。<br>Repository（版本库），的每次更新都需要联网获取上一版本，然后修改，再上传到中央服务器上。<br>分布式版本控制系统，目前Git是这一类的佼佼者，也是github唯一指定的版本工具。他没有中央服务器，版本库可以在自己的电脑上离线使用，也可以在联网情况下与他人共享。另一方面也反应了他的安全性，不用担心在传输过程中掉入黑洞。</p>
-<h4 id="安装设置"><a href="#安装设置" class="headerlink" title="安装设置"></a>安装设置</h4><p>git安装很简单，在<a href="https://git-scm.com/" title="git官网" target="_blank" rel="external">git官网</a>上有一个大大的Download。重点是一些安装之后的设置。</p>
-<pre><code>- $ git config --global user.name &quot;OrangeBorning&quot;
-- $ git config --global user.email &quot;orangeborningzxp@gmail.com&quot;
-</code></pre><p>这里主要设置这台电脑内所有git仓库的全局用户名和邮箱，留下犯罪的罪证。</p>
+<h4 id="安装设置"><a href="#安装设置" class="headerlink" title="安装设置"></a>安装设置</h4><p>git安装很简单，在<a href="https://git-scm.com/" title="git官网" target="_blank" rel="external">git官网</a>上有一个大大的Download。重点是一些安装之后的设置。<br>    $ git config –global user.name “OrangeBorning”<br>    $ git config –global user.email “orangeborningzxp@gmail.com”<br>这里主要设置这台电脑内所有git仓库的全局用户名和邮箱，留下犯罪的罪证。</p>
 <p>通过以上操作，就完成了简单的git环境设置，暂别git，下面进行github上的操作。</p>
 <p>github作为最受欢迎的代码托管平台，也只支持git的作为他的版本管理系统。<a href="https://github.com" title="github官网" target="_blank" rel="external">github</a>的注册其实很简单：</p>
 <p>右上角点击sign up</p>
