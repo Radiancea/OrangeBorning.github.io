@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://zhuxiaopeng.org/2017/06/02/Git学习笔记/index.html">
 <meta property="og:site_name" content="脱缰的小毛驴">
 <meta property="og:description" content="尽管已经用了一段时间的git，但都属于需要什么查什么，不会什么找什么的状态，这篇博文主要记录我的git学习。">
-<meta property="og:updated_time" content="2017-06-02T15:37:03.188Z">
+<meta property="og:updated_time" content="2017-06-05T15:37:58.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git学习笔记">
 <meta name="twitter:description" content="尽管已经用了一段时间的git，但都属于需要什么查什么，不会什么找什么的状态，这篇博文主要记录我的git学习。">
@@ -185,24 +185,73 @@
 <li>分布式管理系统</li>
 </ul>
 <p>集中式版本控制系统，如CVS与SVN，他的工作模式类似与去图书馆借书，所有的资源集中存放在中央服务器上。<br>Repository（版本库），的每次更新都需要联网获取上一版本，然后修改，再上传到中央服务器上。<br>分布式版本控制系统，目前Git是这一类的佼佼者，也是github唯一指定的版本工具。他没有中央服务器，版本库可以在自己的电脑上离线使用，也可以在联网情况下与他人共享。另一方面也反应了他的安全性，不用担心在传输过程中掉入黑洞。</p>
-<h4 id="安装设置"><a href="#安装设置" class="headerlink" title="安装设置"></a>安装设置</h4><p>git安装很简单，在git官网上有一个大大的Download。重点是一些安装之后的设置。</p>
+<h4 id="安装设置"><a href="#安装设置" class="headerlink" title="安装设置"></a>安装设置</h4><p>git安装很简单，在<a href="https://git-scm.com/" title="git官网" target="_blank" rel="external">git官网</a>上有一个大大的Download。重点是一些安装之后的设置。</p>
 <pre><code>- $ git config --global user.name &quot;OrangeBorning&quot;
 - $ git config --global user.email &quot;orangeborningzxp@gmail.com&quot;
 </code></pre><p>这里主要设置这台电脑内所有git仓库的全局用户名和邮箱，留下犯罪的罪证。</p>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>主要是多用，用的多了就记住了，所有的指令都很简单。</p>
-<pre><code>- $ mkdir 
-- $ cd
-- $ pwd
-- $ git init
-- $ git add
-- $ git commit
-- $ git commit -m
-- $ git status
-- $ git diff
-- $ git log
-- $ git reset
-- $ git reflog
-</code></pre>
+<p>通过以上操作，就完成了简单的git环境设置，暂别git，下面进行github上的操作。</p>
+<p>github作为最受欢迎的代码托管平台，也只支持git的作为他的版本管理系统。<a href="https://github.com" title="github官网" target="_blank" rel="external">github</a>的注册其实很简单：</p>
+<p>右上角点击sign up</p>
+<ul>
+<li>step1 输入Username，password，email(注册的邮箱很重要)</li>
+<li>step2 直接continue</li>
+<li>step3 点击skip</li>
+</ul>
+<p>只需三步完成注册。接下来要配置你的SSH。<br>注册完成登录后，右上角点击你的头像，打开setting，找到SSH and GPG keys，里面有完整的英文指南，其实只需要三步：</p>
+<ul>
+<li><p>step1 generating 命令行中输入以下内容生成你的密钥</p>
+<p>  $ ssh-keygen -t rsa -C “your_email@example.com你注册时的邮箱”</p>
+</li>
+<li><p>step2 adding 命令行中输入一下内容复制你的密钥，打开SSH and GPG keys中的New SSH key，右键粘贴，title随便起啦</p>
+<p>  $ clip &lt; ~/.ssh/id_rsa.pub</p>
+</li>
+<li><p>step3 testing 完成以上两部你应该会在github中看见你的黑钥匙，接下来输入以下内容让他变绿。</p>
+<p>  $ ssh -T git@github.com</p>
+</li>
+</ul>
+<p>完成以上操作你的git与github算是连接成功了。下面用一个小李子说明下git仓库的操作。</p>
+<h4 id="git仓库"><a href="#git仓库" class="headerlink" title="git仓库"></a>git仓库</h4><p>首先我们创建一个文件夹,名字随便起，例如foldername</p>
+<pre><code>$ mkdir foldername
+</code></pre><p>然后进入这个这文件夹</p>
+<pre><code>$ cd foldername
+</code></pre><p>在这个项目（就是这个文件夹，之后我们叫他项目）中打开命令行</p>
+<pre><code>$ git init
+</code></pre><p>生成我们的本地仓库，这是一个empty Git repository，在这部操作后项目中会生成一个隐藏文件夹<strong>.git</strong>。在这里面有我们的储存区和缓存区（index）。没有必要的话不用修改里面的内容。</p>
+<p>下面我们touch一个.gitignore文件（突然想起高中和我们菲律宾外教争辩ignore应该怎么读的场景）。</p>
+<pre><code>$ touch .gitignore
+</code></pre><p>这时候你的项目中应该会有一个.gitignore文件，这个文件可以添加你希望git仓库忽略的文件或文件夹，填入相应的名字即可。</p>
+<p>接下来我们在项目中添加一个任务</p>
+<pre><code>$ touch test.md
+</code></pre><p>项目中生成一个名为test.md的文件，进入这个文件添加一些内容。</p>
+<pre><code>$ git status
+</code></pre><p>我们先看看仓库目前的状态，发现有两个红名文件，我在执行下一步。</p>
+<pre><code>$ git add .
+</code></pre><p>注意这里add空格后是一个  <strong>.</strong></p>
+<pre><code>$ git status
+</code></pre><p>再次执行后，我们发现名字变绿了，就和钥匙变绿一样，什么都变绿了就好了。</p>
+<pre><code>$ git commit -m 添加了一个test.md文件
+</code></pre><p>-m需要你填写这次提交仓库的信息，以便别人看懂你做了什么。</p>
+<p>到这里你已经完成了本地仓库的创建，我们需要把他连接到我们的远程仓库github上，接下来进入github页面。</p>
+<p>右上角头像旁边的加号点击下Create a new repository，这里只需要写上你这个仓库的名字，和对仓库的描述，描述随时都可以改。</p>
+<p>完成后你就进入了你的repository，点击ssh复制这个地址，我们再回到git bash中</p>
+<pre><code>$ git remote add origin git@github.com:yourusername/repositoryname.git
+</code></pre><p>这部操作是连接你的本地仓库与远程仓库,成功后我们执行</p>
+<pre><code>$ git push -u origin master
+</code></pre><p>好了，我们现在刷新github的项目，发现他成功的添加了我们本地仓库的内容。<br>到这里一个本地仓库与远程仓库的连接就算完成了。之后我们每次修改了什么内容执行这几部操作就可以</p>
+<pre><code>$ git pull
+$ git add .
+$ git commit -m 修改信息
+$ git push
+</code></pre><p>简单上传步骤就是如此。</p>
+<p>下面说说如何让远程仓库的内容在我的另一台机器上clone一个本地仓库。还记得你的远程仓库地址吗，复制他。</p>
+<pre><code>$ git clone git@github.com:yourusername/repositoryname.git
+</code></pre><p>执行这部操作后，你的文件夹中会得到一个来自github的clone项目。<br>之后的操作和最开始的本地操作一样</p>
+<pre><code>$ git pull
+$ git add .
+$ git commit -m 修改信息
+$ git push
+</code></pre><p>这几个指令不是一起输入，我是说最简单的就需要这几个。git更深的学习慢慢会更新，最后如果想继续深造的可以试试这个游戏<br><a href="http://learngitbranching.js.org/" title="git分支学习" target="_blank" rel="external"><strong>learngitbranching</strong></a></p>
+
       
 
       
