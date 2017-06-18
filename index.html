@@ -154,6 +154,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Livereload-or-meta" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/18/Livereload-or-meta/">Livereload or meta</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/18/Livereload-or-meta/" class="archive-article-date">
+  	<time datetime="2017-06-18T14:58:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>静态页面布局的过程中，如果可以一边写一边看见结果，那肯定是很方便的，在最开始使用的DW中实现了这一目标，但并不是浏览器环境下。<br>开始使用gulp中的livereload后配合chrome插件livereload，在浏览器中也可以时时刷新了，其实sublime的插件库中也可以找到sublime的livereload，最近在翻html标签时，突然想到meta标签的一个功能，所以就到了这一点，仅仅是为了静态页面布局刷新的话，为什么不直接使用标签呢</p>
+<pre><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5&quot;&gt;
+</code></pre><p>我在这里使用了refresh，刷新时间为五秒一次，至于说火狐不支持自动刷新这个在浏览器中可以修改。<br>总之，在这里留下这个思考，如果仅仅为了静态页面的布局编写时时可见，这个方法确实最简单。</p>
+<p>这里再说明下，仅仅是静态页面布局，不考虑js，不考虑加载速度。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/18/Livereload-or-meta/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-碎碎念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -625,11 +687,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">博客更新记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,7 +699,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">城·记</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">博客更新记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,7 +711,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color4">城·记</a>
               </li>
             
             <div class="clearfix"></div>
